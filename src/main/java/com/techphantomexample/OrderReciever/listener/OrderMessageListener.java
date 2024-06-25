@@ -1,5 +1,6 @@
 package com.techphantomexample.OrderReciever.listener;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techphantomexample.OrderReciever.dto.CartDTO;
 import com.techphantomexample.OrderReciever.dto.CartItemDTO;
@@ -19,8 +20,7 @@ public class OrderMessageListener {
     private ObjectMapper objectMapper;
 
     @JmsListener(destination = "${spring.activemq.destination}")
-    public void receiveMessage(String cartJson) {
-        try {
+    public void receiveMessage(String cartJson) throws JsonProcessingException {
             CartDTO cartDTO = objectMapper.readValue(cartJson, CartDTO.class);
             Order order = new Order();
             for (CartItemDTO cartItemDTO : cartDTO.getItems()) {
@@ -34,8 +34,6 @@ public class OrderMessageListener {
                 order.getItems().add(orderItem);
             }
             orderRepository.save(order);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 }
