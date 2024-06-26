@@ -1,24 +1,17 @@
 package com.techphantomexample.OrderReciever.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CartDTO {
 
     private List<CartItemDTO> items;
 
-
-    public List<CartItemDTO> getItems() {
-        return items;
-    }
-
-    public void setItems(List<CartItemDTO> items) {
-        this.items = items;
-    }
-
-    public CartDTO() {
-    }
-
-    public CartDTO(List<CartItemDTO> items) {
-        this.items = items;
-    }
 }
