@@ -34,6 +34,5 @@ public class OrderMessageListener {
                 order.getItems().add(orderItem);
             }
             orderRepository.save(order);
-
     }
 }
