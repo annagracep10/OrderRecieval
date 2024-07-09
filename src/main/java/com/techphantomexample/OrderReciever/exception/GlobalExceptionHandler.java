@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public String handleJsonProcessingException(Exception ex) {
         logger.error("Exception occurred: {}", ex.getMessage());
-        return "An error occurred while processing the order.";
+        return ex.getMessage();
     }
 
 }
