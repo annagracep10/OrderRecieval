@@ -64,7 +64,11 @@ public class AuthController {
         user.setUsername(registerDto.getUsername());
         user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
 
-        Role roles = roleRepository.findByName("USER").get();
+        Role roles = roleRepository.findByName(registerDto.getRole().toUpperCase()).orElse(null);
+        if (roles == null) {
+            return new ResponseEntity<>("Invalid role!", HttpStatus.BAD_REQUEST);
+        }
+
         user.setRoles(Collections.singletonList(roles));
 
         userRepository.save(user);
