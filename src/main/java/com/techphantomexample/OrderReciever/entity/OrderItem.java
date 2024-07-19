@@ -2,12 +2,9 @@ package com.techphantomexample.OrderReciever.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-
+@Generated
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,6 +25,5 @@ public class OrderItem {
     @JoinColumn(name = "order_id",referencedColumnName = "id")
     @JsonBackReference
     private Order order;
-
 
 }

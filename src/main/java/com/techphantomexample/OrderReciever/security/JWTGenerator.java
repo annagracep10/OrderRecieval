@@ -15,7 +15,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JWTGenerator {
-    private static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+    private final Key key;
+
+    public JWTGenerator() {
+        this.key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+    }
+
+    public JWTGenerator(Key key) {
+        this.key = key;
+    }
 
     public String generateToken(Authentication authentication) {
         String username = authentication.getName();

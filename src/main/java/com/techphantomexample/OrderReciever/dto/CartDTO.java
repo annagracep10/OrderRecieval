@@ -1,12 +1,10 @@
 package com.techphantomexample.OrderReciever.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
+@Generated
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

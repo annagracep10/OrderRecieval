@@ -2,14 +2,12 @@ package com.techphantomexample.OrderReciever.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Generated
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,8 +25,5 @@ public class Order {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus status = OrderStatus.ORDER_RECEIVED;
-
-
-
 
 }

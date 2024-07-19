@@ -1,7 +1,9 @@
 package com.techphantomexample.OrderReciever.dto;
 
 import lombok.Data;
+import lombok.Generated;
 
+@Generated
 @Data
 public class AuthResponseDTO {
     private String accessToken;
