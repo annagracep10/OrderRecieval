@@ -16,10 +16,12 @@ import java.util.List;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private int userId;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
     private List<OrderItem> items= new ArrayList<>();
 
     @Enumerated(EnumType.STRING)

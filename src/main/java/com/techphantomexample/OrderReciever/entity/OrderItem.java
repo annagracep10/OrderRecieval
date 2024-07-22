@@ -12,7 +12,6 @@ import lombok.*;
 public class OrderItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private int productId;
@@ -20,10 +19,5 @@ public class OrderItem {
     private double price;
     private int quantity;
     private String productType;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id",referencedColumnName = "id")
-    @JsonBackReference
-    private Order order;
 
 }

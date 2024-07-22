@@ -6,5 +6,6 @@ import lombok.Generated;
 public enum OrderStatus {
     ORDER_RECEIVED,
     OUT_FOR_DELIVERY,
-    DELIVERED
+    DELIVERED,
+    CANCELLED
 }
