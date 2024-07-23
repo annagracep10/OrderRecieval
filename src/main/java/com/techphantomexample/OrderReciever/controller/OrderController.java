@@ -1,5 +1,6 @@
 package com.techphantomexample.OrderReciever.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.techphantomexample.OrderReciever.entity.Order;
 import com.techphantomexample.OrderReciever.entity.OrderStatus;
 import com.techphantomexample.OrderReciever.service.OrderService;
@@ -24,7 +25,7 @@ public class OrderController {
 
     @PutMapping("update/{orderId}/status")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable int orderId, @RequestBody OrderStatus status) {
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable int orderId, @RequestBody OrderStatus status) throws JsonProcessingException {
         Order updatedOrder = orderService.updateOrderStatus(orderId, status);
         return ResponseEntity.ok(updatedOrder);
     }

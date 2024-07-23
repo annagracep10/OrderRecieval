@@ -22,7 +22,6 @@ public class OrderCancellationListener {
 
     @JmsListener(destination = "${spring.activemq.destination.cancel-order}")
     public void receiveCancellationMessage(String cancellationMessageJson) throws JsonProcessingException {
-
         Integer orderId = objectMapper.readValue(cancellationMessageJson, Integer.class);
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new OrderNotFoundException("Order not found with id: " + orderId));
