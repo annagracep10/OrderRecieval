@@ -2,8 +2,6 @@ package com.techphantomexample.OrderReciever.listener;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.techphantomexample.OrderReciever.dto.CartDTO;
-import com.techphantomexample.OrderReciever.dto.CartItemDTO;
 import com.techphantomexample.OrderReciever.entity.Order;
 import com.techphantomexample.OrderReciever.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
