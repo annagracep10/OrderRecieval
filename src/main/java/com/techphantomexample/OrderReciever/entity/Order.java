@@ -24,8 +24,19 @@ public class Order {
     @JoinColumn(name = "order_id")
     private List<OrderItem> items= new ArrayList<>();
 
+    private double totalAmount;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus status = OrderStatus.ORDER_RECEIVED;
+
+    @Column(name = "razorpay_order_id")
+    private String razorpayOrderId;
+
+    @Column(name = "razorpay_order_currency")
+    private String razorpayOrderCurrency;
+
+    @Column(name = "razorpay_order_amount")
+    private Integer razorpayOrderAmount;
 
 }

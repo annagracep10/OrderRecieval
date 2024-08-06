@@ -20,5 +20,9 @@ public class OrderDto {
 
     private int id;
     private int userId;
+    private double totalAmount;
     private List<OrderItem> items= new ArrayList<>();
+    private String razorpayOrderId;
+    private String razorpayOrderCurrency;
+    private Integer razorpayOrderAmount;
 }
